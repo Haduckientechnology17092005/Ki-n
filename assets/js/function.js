@@ -8,11 +8,6 @@ let contacts = [
         name: "Bảo Nhân",
         phone: "0985947191",
         email: "baonhan@gmail.com"
-    },
-     {
-        name: "Van Cuong",
-        phone: "0985947191",
-        email: "vancuong@gmail.com"
     }
 ];
 
