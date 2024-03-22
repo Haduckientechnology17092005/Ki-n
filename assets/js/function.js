@@ -8,7 +8,12 @@ let contacts = [
         name: "Bảo Nhân",
         phone: "0985947191",
         email: "baonhan@gmail.com"
-    }
+    },
+    {
+        name: "Văn Cường",
+        phone: "0985947191",
+        email: "vancuong@gmail.com"
+    },
 ];
 
 if (localStorage.getItem("contacts")){
