@@ -8,6 +8,11 @@ let contacts = [
         name: "Bảo Nhân",
         phone: "0985947191",
         email: "baonhan@gmail.com"
+    },
+     {
+        name: "Van Cuong",
+        phone: "0985947191",
+        email: "vancuong@gmail.com"
     }
 ];
 
@@ -19,6 +24,8 @@ let cardsContainer = document.querySelector(".cards");
 let createBtn = document.getElementById("create-btn");
 let popupContainer = document.querySelector(".popup-container");
 let popupMain = document.querySelector(".popup-main");
+let editBox = document.querySelector(".edit-container");
+console.log(editBox);
 
 // open popup
 createBtn.addEventListener("click", function(){
@@ -57,7 +64,7 @@ function render(){
                     <span id="mail">${item.email}</span>
                 </div>
                 <div class="action">
-                    <img id="edit" src="./assets/icon/img/edit.svg" alt="">
+                    <img id="edit" onclick="Edit(${index})" src="./assets/icon/img/edit.svg" alt="">
                     <img id="delete" onclick="Delete(${index})" src="./assets/icon/img/delete.svg" alt="">
                 </div>
             </div>
@@ -69,20 +76,25 @@ function render(){
 }
 
 function onCreate() {
-    let Nname = document.getElementById("field-name").value;
-    let Nphone = document.getElementById("field-phone").value;
-    let Nemail = document.getElementById("field-email").value;
-    console.log( Nname, Nphone, Nemail )
+  if (document.getElementById("field-name").value == "" || document.getElementById("field-phone").value == "" || document.getElementById("field-email").value == "") {
+    alert("Vui lòng điền đầy đủ thông tin");
+  } else {
+    let newContact = {
+      name: document.getElementById("field-name").value,
+      phone: document.getElementById("field-phone").value,
+      email: document.getElementById("field-email").value
+    };
+    console.log(name, phone, mail)
     contacts.push({
-        name : Nname,
-        phone : Nphone,
-        email: Nemail
-    });
-    console.log(contacts);
+        name: name,
+        phone: phone,
+        mail: mail});
+    contacts.push(newContact);
     localStorage.setItem("contacts", JSON.stringify(contacts));
     render();
     popupContainer.classList.toggle('active');
-}
+}}
+
 function Delete (index){
 
     console.log(index);
@@ -90,4 +102,22 @@ function Delete (index){
     localStorage.setItem("contacts", JSON.stringify(contacts));
     render();
 }
+function Edit(index){
+    let editBox = document.querySelector(".edit-container")
+    let Save = document.querySelector("#save")
+    editBox.classList.toggle("active")
+    document.getElementById("edit-name").value = contacts[index].name
+    document.getElementById("edit-phone").value = contacts[index].phone
+    document.getElementById("edit-mail").value = contacts[index].mail
+    Save.addEventListener("click", function(){
+        contacts[index].name = document.getElementById("edit-name").value
+        contacts[index].phone = document.getElementById("edit-phone").value
+        contacts[index].email = document.getElementById("edit-mail").value
+        localStorage.setItem("contacts", JSON.stringify(contacts))
+        render()
+        editBox.classList.remove("active")
+    })
+}
+
+
 render();
