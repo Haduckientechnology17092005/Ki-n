@@ -34,6 +34,17 @@
                     </div>
                 </div>
             </div>
+            </div>
+            <div class="edit-container">
+                <div class="edit-main">
+                    <label for="edit-name">Name</label>
+                    <input type="text" id="edit-name">
+                    <label for="edit-phone">Phone</label>
+                    <input type="text" id="edit-phone">
+                    <label for="edit-mail">Email</label>
+                    <input type="text" id="edit-mail">
+                    <button id ="save">Save</button>
+                </div>
         </div>
         <div class="header">
             <button id="create-btn">Create</button>
@@ -54,7 +65,7 @@
                     <span id="mail">haduckien1709@gmail.com</span>
                 </div>
                 <div class="action">
-                    <img id="edit" src="./assets/icon/img/edit.svg" alt="">
+                    <img id="edit" onclick="Edit()" src="./assets/icon/img/edit.svg" alt="">
                     <img id="delete" onclick="Delete()" src="./assets/icon/img/delete.svg" alt="">
                 </div>
             </div>
