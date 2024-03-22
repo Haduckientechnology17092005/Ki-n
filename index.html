@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="popup-container"> <!-- Thêm popup-container -->
+            <div class="popup-main">
+                <div class="popup-content">
+                    <div class="popup-header">
+                        <span>Create Contact</span>
+                        <span class="close-btn">×</span>
+                    </div>
+                    <div class="popup-body">
+                        <input type="text" id="field-name" placeholder="Name">
+                        <input type="text" id="field-phone" placeholder="Phone">
+                        <input type="email" id="field-email" placeholder="Email">
+                        <button id="submit-btn" onclick="onCreate()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <button id="create-btn">Create</button>
+        </div>
+        <!-- list card -->
+        <div class="cards">
+            <div class="card">
+                <div class="card-item">
+                    <img src="./assets/icon/img/person.svg" alt="">
+                    <span id="name">Hà Đức Kiên</span>
+                </div>
+                <div class="card-item">
+                    <img src="./assets/icon/img/contact.svg" alt="">
+                    <span id="phone">0387717425</span>
+                </div>
+                <div class="card-item">
+                    <img src="./assets/icon/img/email.svg" alt="">
+                    <span id="mail">haduckien1709@gmail.com</span>
+                </div>
+                <div class="action">
+                    <img id="edit" src="./assets/icon/img/edit.svg" alt="">
+                    <img id="delete" onclick="Delete()" src="./assets/icon/img/delete.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./assets/js/function.js"></script>
+</html>
