@@ -46,6 +46,18 @@
     align-items: center;
     background-color: #1818188d;
 }
+.edit-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #1818188d;
+}
 .popup-main {
     padding: 10px;
     border-radius: 8px;
